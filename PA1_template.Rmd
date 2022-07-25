@@ -30,6 +30,7 @@ stepsperday <- aggregate(data["steps"], by=data["date"], sum)
 ggplot(stepsperday, aes(x=steps)) + 
   labs(title = "Steps per Day", x = "Steps", y = "Frequency") + 
   geom_histogram(fill = "darkgreen", binwidth = 1000)
+ggsave(file="stepsperday.png")
 
 mean(stepsperday$steps, na.rm = TRUE)
 median(stepsperday$steps, na.rm = TRUE)
@@ -64,6 +65,7 @@ stepsperday2 <- aggregate(imputedata["steps"], by=imputedata["date"], sum)
 ggplot(stepsperday2, aes(x=steps)) + 
   labs(title = "Steps per Day", x = "Steps", y = "Frequency") + 
   geom_histogram(fill = "darkblue", binwidth = 1000)
+ggsave("stepsperday2.png")
 
 mean(stepsperday2$steps, na.rm = TRUE)
 median(stepsperday2$steps, na.rm = TRUE)
@@ -109,4 +111,5 @@ weekendplot <- ggplot(by_interval3, aes(x=interval, y=avg_steps, color = "Weeken
 
 
 grid.arrange(weekendplot,weekdayplot)
+ggsave(file="weekplot.png")
 ```

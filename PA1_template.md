@@ -72,7 +72,19 @@ ggplot(stepsperday, aes(x=steps)) +
 ## Warning: Removed 8 rows containing non-finite values (stat_bin).
 ```
 
-![plot of chunk unnamed-chunk-2](figure/unnamed-chunk-2-1.png)
+![](PA1_template_files/figure-html/unnamed-chunk-2-1.png)<!-- -->
+
+```r
+ggsave(file="stepsperday.png")
+```
+
+```
+## Saving 7 x 5 in image
+```
+
+```
+## Warning: Removed 8 rows containing non-finite values (stat_bin).
+```
 
 ```r
 mean(stepsperday$steps, na.rm = TRUE)
@@ -137,7 +149,15 @@ ggplot(stepsperday2, aes(x=steps)) +
   geom_histogram(fill = "darkblue", binwidth = 1000)
 ```
 
-![plot of chunk unnamed-chunk-4](figure/unnamed-chunk-4-1.png)
+![](PA1_template_files/figure-html/unnamed-chunk-4-1.png)<!-- -->
+
+```r
+ggsave("stepsperday2.png")
+```
+
+```
+## Saving 7 x 5 in image
+```
 
 ```r
 mean(stepsperday2$steps, na.rm = TRUE)
@@ -198,4 +218,12 @@ weekendplot <- ggplot(by_interval3, aes(x=interval, y=avg_steps, color = "Weeken
 grid.arrange(weekendplot,weekdayplot)
 ```
 
-![plot of chunk unnamed-chunk-5](figure/unnamed-chunk-5-1.png)
+![](PA1_template_files/figure-html/unnamed-chunk-5-1.png)<!-- -->
+
+```r
+ggsave(file="weekplot.png")
+```
+
+```
+## Saving 7 x 5 in image
+```
